@@ -25,9 +25,6 @@ class PublicacionController extends Controller
                 return view('publicacion.index',["publicaciones"=>$publicaciones,"searchText"=>$query]);
                 
             }
-
-        
-    
     }
 
     /**
