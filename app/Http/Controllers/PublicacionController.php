@@ -19,7 +19,8 @@ class PublicacionController extends Controller
             if($request){
                 $query=trim($request->get('searchText'));   
 
-                $publicaciones=Publicacion::orderBy('id','ASC') 
+                $publicaciones=Publicacion::orderBy('id','ASC')
+                ->where('id','LIKE','%'.$query.'%') 
                 ->paginate(3);
                 return view('publicacion.index',["publicaciones"=>$publicaciones,"searchText"=>$query]);
                 
